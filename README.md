@@ -17,5 +17,5 @@ När ni har installerar node.js och alla nödvändiga tilläg i er kodredigerare
 1. Kör `git clone https://github.com/RezanTuran/NodeExpressTodo.gitt` (eller klona [ditt eget fork](https://github.com/RezanTuran/NodeExpressTodo.git) från repository)
 2. Gå till den 'klonade' mappen `cd NodeExpressTodo`
 3. Kör `npm install`( måste alltid köras före första start eller när du ändrar källkoden)
-4. Kör `node server.js` eller 'nodemon server.js'
+4. Kör `node server.js` eller `nodemon server.js`
 5. Ange i webbläsaren http://localhost:3000
