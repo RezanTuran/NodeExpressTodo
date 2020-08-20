@@ -1,0 +1,28 @@
+### GET Todos
+GET http://localhost:3000/api/todos
+
+### POST Todos
+POST http://localhost:3000/api/todos/
+Content-Type: application/json
+
+{
+    "title": "Städa",
+    "description": "plugga efter träningen",
+    "date": "2020-08-16"
+}
+
+### Update Todos
+PUT http://localhost:3000/api/todos/3
+Content-Type: application/json
+
+{
+    "title": "Handla",
+    "description": "plugga efter träningen",
+    "date": "2020-08-29"
+}
+
+### Remove Todos
+DELETE http://localhost:3000/api/todos/1
+
+### 404 Validation
+POST http://localhost:3000/api/todos/sdfdsfdsf

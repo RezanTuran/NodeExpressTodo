@@ -1,0 +1,103 @@
+// window.addEventListener('load', start)
+
+//  async function start() {
+//     const result = await fetch('/api/todos')
+//     const todos = await result.json()
+//     console.log(todos);
+
+//     let container = document.getElementById("container")
+
+//         for (let i = 0; i < todos.length; i++) {
+//             let title = (todos[i].title);
+//             let date = (todos[i].date);
+
+//             let box = document.createElement("div");
+
+//             let tileTag = document.createElement("p");
+//             let dateTag = document.createElement("p");
+
+//             tileTag.innerText = title;
+//             dateTag.innerText = date;
+
+//             box.appendChild(tileTag);
+//             box.appendChild(dateTag);
+
+//             container.appendChild(box);
+// }
+// }
+
+
+
+####################
+
+// function makeRequest(url, method, formdata, callback) {
+//     fetch(url, {
+//         method: method,
+//         body: formdata
+//     }).then((data) => {
+//         return data.json()
+//     }).then((result) => {
+//         callback(result)
+//     }).catch((err) => {
+//         console.log("Error: ", err)
+//     })   
+// }
+
+// function getTodos() {
+//     makeRequest('http://localhost:3000/api/todos', "GET", null, (result) => {
+
+//         let container = document.getElementById("container")
+
+//         for (let i = 0; i < result.length; i++) {
+//             let title = (result[i].title);
+//             let date = (result[i].date);
+
+//             let box = document.createElement("div");
+
+//             let tileTag = document.createElement("p");
+//             let dateTag = document.createElement("p");
+
+//             tileTag.innerText = title;
+//             dateTag.innerText = date;
+
+//             box.appendChild(tileTag);
+//             box.appendChild(dateTag);
+
+//             container.appendChild(box);
+//         }
+//         console.log(result);
+//     })
+// }
+// getTodos() 
+
+
+
+
+
+
+
+ async function start() {
+    const result = await fetch('/api/todos')
+    const todos = await result.json()
+    console.log(todos);
+
+    let container = document.getElementById("container")
+
+        for (let i = 0; i < todos.length; i++) {
+            let title = (todos[i].title);
+            let date = (todos[i].date);
+
+            let box = document.createElement("div");
+
+            let tileTag = document.createElement("p");
+            let dateTag = document.createElement("p");
+
+            tileTag.innerText = title;
+            dateTag.innerText = date;
+
+            box.appendChild(tileTag);
+            box.appendChild(dateTag);
+
+            container.appendChild(box);
+}
+}
