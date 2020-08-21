@@ -42,11 +42,15 @@ event.preventDefault() // Hinda ladda om sidan
             titleTag.innerText = title;
             descriptionTag.innerText = description;
             dateTag.innerText = date;
-            deleteButton.innerText = "Delete";
-            updateButton.innerText = "Update";
+            deleteButton.innerText = "Ta Bort";
+            updateButton.innerText = "Uppdatera";
 
-            deleteButton.style.background = "#B35462";
-            updateButton.style.background = "#B35462";
+            deleteButton.classList = "btn btn-danger"
+            updateButton.classList = "btn btn-info"
+
+            updateButton.style.margin = "2px";
+
+
 
             deleteButton.onclick = function () {
                 deleteTodos(id);

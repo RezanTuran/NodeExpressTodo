@@ -5,9 +5,9 @@ let idIndex = 1
 
 const todos = [{
     id: 0,
-    title: "Plugga",
-    description: "plugga efter träningen",
-    date: "2020-06-80"
+    title: "Träna",
+    description: "Träna efter jobbet",
+    date: "2020-08-18"
 }]
 
 const app = express()
