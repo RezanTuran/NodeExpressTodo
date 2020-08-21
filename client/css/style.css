@@ -1,0 +1,27 @@
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.todoBox{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 1em;
+    padding: 1em;
+    width: 18em;
+    border-radius: 1em;
+}
+.rubrik{
+    text-transform: uppercase;
+    font-family: Bangers;
+    font-weight: bolder;
+}
+.date{
+    font-family: Bangers;
+    font-weight: bolder;
+    font-size: 20px;
+}

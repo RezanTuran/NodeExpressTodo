@@ -25,6 +25,7 @@ event.preventDefault() // Hinda ladda om sidan
 
     let container = document.getElementById("container")
 
+
         for (let i = 0; i < todos.length; i++) {
             let title = (todos[i].title);
             let description = (todos[i].description);
@@ -32,10 +33,13 @@ event.preventDefault() // Hinda ladda om sidan
             let id = (todos[i].id);
 
             let box = document.createElement("div");
+            box.classList = "todoBox"
 
             let titleTag = document.createElement("h3");
+            titleTag.classList = "rubrik"
             let descriptionTag = document.createElement("p");
             let dateTag = document.createElement("p");
+            dateTag.className = "date"
             let deleteButton = document.createElement("button");
             let updateButton = document.createElement("button");
 
