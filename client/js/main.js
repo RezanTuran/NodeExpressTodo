@@ -18,13 +18,12 @@ event.preventDefault() // Hinda ladda om sidan
 }
 
 // ### Get All Todos ### //
- async function getTodos() {
+async function getTodos() {
     const result = await fetch('/api/todos')
     const todos = await result.json()
     console.log(todos);
 
     let container = document.getElementById("container")
-
 
         for (let i = 0; i < todos.length; i++) {
             let title = (todos[i].title);
@@ -49,11 +48,13 @@ event.preventDefault() // Hinda ladda om sidan
             deleteButton.innerText = "Ta Bort";
             updateButton.innerText = "Uppdatera";
 
-            deleteButton.classList = "btn btn-danger"
-            updateButton.classList = "btn btn-info"
+            deleteButton.classList = "btn btn-danger fas fa-trash-alt"
+            updateButton.classList = "btn btn-info fas fa-edit"
+            
+            deleteButton.style.width = "8em"
+            updateButton.style.width = "8em"
 
             updateButton.style.margin = "2px";
-
 
 
             deleteButton.onclick = function () {
@@ -74,14 +75,18 @@ event.preventDefault() // Hinda ladda om sidan
 }
 
 // ### Post Todos ### //
-function addTodos() {
+addTodos = () => {
     
     let todosInput = document.getElementById("todosInput").value
     let todosDescription = document.getElementById("todosDescription").value
     let todosDate = document.getElementById("todosDate").value
     
     if(todosInput === "" || todosDate === ""){
-        alert("Fyll uppgifter som behövs")
+        Swal.fire(
+            'OBS!',
+            'Fylla i uppgifter som behövs...',
+            'error'
+          )
     }else{
     let body = {
         "title": todosInput,
@@ -93,24 +98,24 @@ function addTodos() {
 }
 }
 
-function deleteTodos(id) {
+// ### Remove Todos ### //
+deleteTodos = (id) => {
 
     makeRequest('/api/todos/' + id, 'delete')
     location.reload()
 }
 
-
-
-function updateTodos(id) {
+// ### Update Todos ### //
+updateTodos = (id) => {
 
     let todo = {
-        title:"dsfdsfsdf",
-        description:"Dfgdfdf",
+        title:"Handla",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dumm",
         date:"2020-01-01"
     }
+    document.getElementById("todosInput").value = todo.title
+    document.getElementById("todosDescription").value = todo.description
+    document.getElementById("todosDate").value = todo.date
 
     makeRequest('/api/todos/' + id, 'put', JSON.stringify(todo))
-    
 }
-
-
