@@ -119,3 +119,8 @@ updateTodos = (id) => {
 
     makeRequest('/api/todos/' + id, 'put', JSON.stringify(todo))
 }
+
+// Link to calenderPage
+oppenCalenderPage = () =>{
+    location.href = "../calendar.html"
+}
