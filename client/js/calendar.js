@@ -13,10 +13,40 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
+function formatDate(date) {
+    const year = date.getFullYear().toString();
+    const month = (date.getMonth() + 101).toString().substring(1);
+    const day = (date.getDate() + 100).toString().substring(1);
+    return year + "-" + month + "-" + day;
+}
+getDays()
+
+
 function getDays() {
     makeRequest("https://api.dryg.net/dagar/v2.1/2020", "GET", null, (result) => {
 
-		let showDays = document.getElementById("days")
+            const month = new Array();
+            month[0] = "Januari";
+            month[1] = "Februari";
+            month[2] = "Mars";
+            month[3] = "April";
+            month[4] = "Maj";
+            month[5] = "Juni";
+            month[6] = "Juli";
+            month[7] = "Augusti";
+            month[8] = "September";
+            month[9] = "Oktober";
+            month[10] = "November";
+            month[11] = "December";
+          
+            const d = new Date();
+            const showMonth = month[d.getMonth()];
+            //console.log(showMonth);     
+
+        let getMonth = document.getElementById("month")
+        getMonth.innerText = showMonth
+        let showDays = document.getElementById("days")
+        
 
 		for (let i = 1; i < result.dagar.length; i++) {
 
@@ -56,21 +86,6 @@ function getDays() {
 	})
 }
 
-function formatDate(date) {
-    var year = date.getFullYear().toString();
-    var month = (date.getMonth() + 101).toString().substring(1);
-    var day = (date.getDate() + 100).toString().substring(1);
-    return year + "-" + month + "-" + day;
-}
 
 
-getDays()
 
-// const calendar  = document.querySelector("#app-calendar");
-
-
-// for (let day = 1; day < 31; day++ ){
-//     console.log(day);
-
-//     calendar.insertAdjacentHTML("beforeend", `<div class="day">${day}</div>`)
-// }
