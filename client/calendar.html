@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/calendarPage.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"> <!-- ### Fontawsome Icon Bibliotek ###-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Todo | Kalender</title>
-
 </head>
 <body>
 
-    <h2 align="center" style="color:white; font-size: 25px;" id="month"></h2>
+    <h2 style="font-family: Sofia; text-align: center;" id="month"></h2>
+    <button onclick="backToHomePage()" class="btn btn-danger backToHomePage"><i class="fas fa-arrow-left"></i> Tillbaka</button>
     <div id="days"></div>
-    
+   
+<section id="prevousSection">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li id="liPage" class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</section>
+
     <script defer src="js/calendar.js"></script>
 </body>
 </html>

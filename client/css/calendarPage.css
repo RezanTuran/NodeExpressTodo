@@ -1,11 +1,12 @@
 body{
-    background: black;
+    background: url(../img/1668932.jpg);
+    margin: 0;
 }
 #days{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: black;
+    background: transparent;
     border: none;
     width: auto;
     height: auto;
@@ -15,12 +16,19 @@ div{
     width: 10em;
     height: auto;
     margin: 1em;
-    color: greenyellow;
-    border: 2px solid red;
+    color: black;
+    border: 2px solid black;
 }
 div:hover{
     color: black;
     border: 2px solid blue;
     background: yellow;
 }
+.backToHomePage{
+    margin-left: 5em;
+}
 
+#prevousSection{
+    display: flex;
+    justify-content: center;
+}

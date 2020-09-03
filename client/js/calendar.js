@@ -43,30 +43,39 @@ function getDays() {
             const showMonth = month[d.getMonth()];
             //console.log(showMonth);     
 
+            // Get year
+            const fullYear = d.getFullYear();
+            
         let getMonth = document.getElementById("month")
-        getMonth.innerText = showMonth
+        getMonth.innerText = showMonth + " " + fullYear
         let showDays = document.getElementById("days")
-        
 
+        
 		for (let i = 1; i < result.dagar.length; i++) {
 
 			let days = (result.dagar[i].veckodag);
             let date = (result.dagar[i].datum);
-            
 
             let row = document.createElement("div");
             
-            if(date < formatDate(new Date())){
+            if(date < "2020-09-01"){
                 row.style.display = "none"
             }
+            if(date > "2020-10-01"){
+                row.style.display = "none"
+            }
+
 
 			let dayNameTag = document.createElement("p");
             let datemTag = document.createElement("p");
             
+            // Show ToDays Date
             if(date === formatDate(new Date())){
                 datemTag.style.color = "red"
                 dayNameTag.style.color = "red"
-                row.style.borderColor = "turquoise"
+                row.style.border = "5px solid lightseagreen"
+                datemTag.style.fontWeight = "bolder"
+                dayNameTag.style.fontWeight = "bolder"
             }
 
 			dayNameTag.innerText = days;
@@ -78,14 +87,15 @@ function getDays() {
 			showDays.appendChild(row);
 
             row.onclick = function () {
-             alert("Det kommer")
+                alert("Det kommer")
             }
-            
-		}
+    }
         console.log(result.dagar);
 	})
 }
 
-
-
+// Link to homepage
+backToHomePage = () => {
+    location.href = "../index.html"
+}
 
